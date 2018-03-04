@@ -8,5 +8,4 @@
 *.map.js
 *.DS_STORE
 */node_modules/
-*/dist/
 */tslint_reports/

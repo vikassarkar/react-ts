@@ -5,8 +5,9 @@ import { Home } from '../../pages/home/Home';
 import { Contact } from '../../pages/contact/Contact';
 import { About } from '../../pages/about/About';
 
-const configs:any = require("../../configs/env_config.json");
-const basePath = configs.githubBuild === "githubBuild"? configs.router_basename_build : configs.router_basename_dev;
+//const configs:any = require("../../configs/env_config.json");
+//const basePath = configs.githubBuild === "githubBuild"? configs.router_basename_build : configs.router_basename_dev;
+const basePath="";
 
 export const MyRouter = () => {
   return (

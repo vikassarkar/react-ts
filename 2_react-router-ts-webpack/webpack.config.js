@@ -13,7 +13,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 
-const outDir = path.join(__dirname, "./dist/my-module/");
+const outDir = path.join(__dirname, "./build/");
 const testDir = path.resolve(__dirname, "./src/__test__/");
 var routerConfigPath = "./src/configs/env_config.json";
 
@@ -73,7 +73,7 @@ const getPlugins = (env) => {
 
 
 module.exports = function (env) {
-    editRouterBaseConfig("githubBuild");
+    //editRouterBaseConfig("githubBuild");
     return buildConfigs = {
         entry: {
             "my-module": ["./src/module/my-module/MyRouterLoader.tsx"],
@@ -82,7 +82,7 @@ module.exports = function (env) {
         },
         output: {
             path: outDir,
-            publicPath: "/react-ts/2_react-router-ts-webpack/demo/",
+            publicPath: "/",
             pathinfo: true,
             filename: "[name].bundle.js",
         },

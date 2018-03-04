@@ -6,7 +6,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 
-const outDir = path.join(__dirname, "./dist/");
+const outDir = path.join(__dirname, "./build/");
 const testDir = path.resolve(__dirname, "./__test__");
 
 module.exports = () => {
