@@ -61,7 +61,7 @@ module.exports = function (env) {
         },
         output: {
             path: outDir,
-            publicPath: "",
+            publicPath: "/vikassarkar.github.io/react-ts/2_react-router-ts-webpack/bundle-eg/",
             pathinfo: true,
             filename: "[name].bundle.js",
         },
