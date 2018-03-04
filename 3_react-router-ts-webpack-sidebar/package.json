@@ -5,13 +5,17 @@
   "main": "index.js",
   "author": "vikas sarkar",
   "license": "MIT",
+  "homepage": "https://vikassarkar.github.io/react-ts/2_react-router-ts-webpack/build",
   "scripts": {
     "start": "webpack-dev-server -w --config webpack.dev.config.js --env.appType=devserver",
-    "build": "webpack --progress --env.appType=build"
+    "build": "webpack --progress --env.appType=build",
+    "predeploy": "npm run build",
+    "deploy_git": "gh-pages -d build"
   },
   "dependencies": {
     "bootstrap": "4.0.0-beta",
     "express": "^4.16.2",
+    "gh-pages": "^1.1.0",
     "jquery": "^3.3.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
@@ -32,8 +36,11 @@
     "css-loader": "^0.28.10",
     "extract-text-webpack-plugin": "^3.0.2",
     "file-loader": "^1.1.9",
+    "fs": "0.0.1-security",
+    "fs-extra": "^5.0.0",
     "html-webpack-plugin": "^2.30.1",
     "image-webpack-loader": "^4.1.0",
+    "json-loader": "^0.5.7",
     "node-sass": "^4.7.2",
     "raw-loader": "^0.5.1",
     "sass-loader": "^6.0.6",
