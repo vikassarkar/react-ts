@@ -1,17 +1,12 @@
 
 .awcache
-
 .vscode
-
 .vs
-
 .suo
-
 .git
-LICENCE
-
 *.log*
-
 *.map.js
-*
-.DS_STORE
+*.DS_STORE
+*/node_modules/
+*/dist/
+*/tslint_reports/
