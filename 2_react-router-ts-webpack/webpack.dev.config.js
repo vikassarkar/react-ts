@@ -3,9 +3,11 @@
  * Work on webpack dashboard & chunks of scss/css
  * 
  */
+const path = require("path");
+const fs = require("fs");
+const fse = require("fs-extra");
 
 const webpack = require('webpack');
-const path = require("path");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
@@ -13,6 +15,25 @@ const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 
 const outDir = path.join(__dirname, "./dist/my-module");
 const testDir = path.resolve(__dirname, "./src/__test__/");
+var routerConfigPath = "./src/configs/env_config.json";
+
+const editRouterBaseConfig = (buildType) => {
+    var updateFileContent = function (oldContent, contentReplaceRegx) {
+        var newContent = oldContent.replace(contentReplaceRegx, function (e) {
+            return buildType;
+        });
+        return newContent;
+    };
+
+    if (fs.existsSync(routerConfigPath)) {
+        var contentReplaceRegx = new RegExp("githubBuild|devBuild", "g")
+        var oldContent = fs.readFileSync(routerConfigPath, 'utf8');
+        var newContent = updateFileContent(oldContent, contentReplaceRegx);
+        fs.writeFileSync(routerConfigPath, newContent);
+    } else {
+        console.log("compiling with default devBuild config")
+    }
+};
 
 const getPlugins = (env) => {
     let plugins = [
@@ -51,7 +72,7 @@ const getPlugins = (env) => {
 
 
 module.exports = function (env) {
-
+    editRouterBaseConfig("devBuild");
     return buildConfigs = {
         entry: {
             "my-module": ["./src/module/my-module/MyRouterLoader.tsx"],
@@ -73,7 +94,7 @@ module.exports = function (env) {
             loaders: [
                 { test: /\.tsx?$/, use: ["awesome-typescript-loader"], exclude: testDir },
                 { test: /\.html$/, use: "raw-loader" },
-                { test: /\.json$/, use: "json-loader" },
+                { test: /\.json$/, enforce: "pre", use: ['json-loader'] },
                 { test: /\.(gif|png|jpe?g)$/i, use: ["file-loader?limit=20000&name=[name].[ext]&publicPath=/assets/images/&outputPath=assets/images/", "image-webpack-loader"] },
                 { test: /\.svg$/, use: 'url-loader?limit=65000&mimetype=image/svg+xml&name=assets/fonts/[name].[ext]' },
                 { test: /\.woff$/, use: 'url-loader?limit=65000&mimetype=application/font-woff&name=assets/fonts/[name].[ext]' },

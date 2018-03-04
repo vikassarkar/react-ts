@@ -1,14 +1,15 @@
 import * as React from 'react';
+import { BrowserRouter, Link, Route } from 'react-router-dom';
 
 import { Home } from '../../pages/home/Home';
 import { Contact } from '../../pages/contact/Contact';
 import { About } from '../../pages/about/About';
 
-import { BrowserRouter, Link, Route } from 'react-router-dom';
+const configs:any = require("../../configs/env_config.json");
 
 export const MyRouter = () => {
   return (
-    <BrowserRouter basename="/react-ts/2_react-router-ts-webpack/bundle-eg">
+    <BrowserRouter basename={configs.githubBuild === "githubBuild"? configs.router_basename_build : configs.router_basename_dev}>
       <div>
         <ul style={{ listStyle: "none", padding: "0" }}>
           <li><Link to='/home'>Home</Link></li>
