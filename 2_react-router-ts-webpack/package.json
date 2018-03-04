@@ -6,10 +6,8 @@
   "author": "vikas sarkar",
   "license": "MIT",
   "scripts": {
-    "server": "node server.js",
     "start": "webpack-dev-server -w --config webpack.dev.config.js --env.appType=devserver",
-    "build": "webpack --progress --env.appType=build",
-    "dev": "webpack-dashboard webpack-dev-server -w --config webpack.dev.config.js --env.appType=dashboard"
+    "build": "webpack --progress --env.appType=build"
   },
   "dependencies": {
     "bootstrap": "4.0.0-beta",
@@ -48,7 +46,6 @@
     "uglifyjs-webpack-plugin": "^1.2.2",
     "url-loader": "^0.6.2",
     "webpack": "^3.11.0",
-    "webpack-dashboard": "^1.1.1",
     "webpack-dev-server": "^2.11.1"
   }
 }

@@ -6,8 +6,6 @@
 
 const webpack = require('webpack');
 const path = require("path");
-const Dashboard = require("webpack-dashboard");
-const DashboardPlugin = require("webpack-dashboard/plugin");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
@@ -48,12 +46,6 @@ const getPlugins = (env) => {
             minChunks: Infinity
         })
     ];
-    if( env.appType == "dashboard"){
-        plugins.push(new DashboardPlugin({
-            color: 'cyan',
-            handler: Dashboard.setData
-        }));
-    }
     return plugins;
 };
 
