@@ -82,7 +82,7 @@ module.exports = function (env) {
         },
         output: {
             path: outDir,
-            publicPath: "/",
+            publicPath: "/react-ts/2_react-router-ts-webpack/demo/",
             pathinfo: true,
             filename: "[name].bundle.js",
         },
