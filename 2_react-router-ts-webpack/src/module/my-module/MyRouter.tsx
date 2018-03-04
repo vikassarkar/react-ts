@@ -9,7 +9,7 @@ const configs:any = require("../../configs/env_config.json");
 
 export const MyRouter = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={configs.githubBuild === "githubBuild"? configs.router_basename_build : configs.router_basename_dev}>
       <div>
         <ul style={{ listStyle: "none", padding: "0" }}>
           <li><Link to='/home'>Home</Link></li>
