@@ -6,7 +6,8 @@ import { Contact } from '../../pages/contact/Contact';
 import { About } from '../../pages/about/About';
 
 const configs:any = require("../../configs/env_config.json");
-const basePath = configs.githubBuild === "githubBuild"? configs.router_basename_build : configs.router_basename_dev
+const basePath = configs.githubBuild === "githubBuild"? configs.router_basename_build : configs.router_basename_dev;
+
 export const MyRouter = () => {
   return (
     <BrowserRouter basename={basePath}>
@@ -21,11 +22,6 @@ export const MyRouter = () => {
         <Route path={'/home'} component={Home} />
         <Route path={'/contact'} component={Contact} />
         <Route path={'/about'} component={About} />
-        {/* for referesh */}
-        <Route exact path={basePath+'/'} component={Home} />
-        <Route path={basePath+'/home'} component={Home} />
-        <Route path={basePath+'/contact'} component={Contact} />
-        <Route path={basePath+'/about'} component={About} />
         {/* ways to add component in route - component, render, children */}
       </div>
     </BrowserRouter >
