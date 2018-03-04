@@ -16,7 +16,7 @@ const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 const outDir = path.join(__dirname, "./dist/my-module/");
 const testDir = path.resolve(__dirname, "./src/__test__/");
 var routerConfigPath = "./src/configs/env_config.json";
-var basePathName = "/react-ts/2_react-router-ts-webpack/bundle-eg";
+var basePathName = "/react-ts/2_react-router-ts-webpack/bundle-eg/";
 
 const editRouterBaseConfig = (buildType) => {
     var updateFileContent = function (oldContent, contentReplaceRegx) {
