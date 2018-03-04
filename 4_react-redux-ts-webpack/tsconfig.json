@@ -1,0 +1,38 @@
+{
+  "compilerOptions": {
+    "module": "es2015",
+    "target": "es2015",
+    "jsx": "react",
+    "outDir": "build",
+    "allowSyntheticDefaultImports": true,
+    "noImplicitAny": true,
+    "sourceMap": true,
+    "experimentalDecorators": true,
+    "preserveConstEnums": true,
+    "allowJs": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "moduleResolution": "node",
+    "skipLibCheck": true,
+    "baseUrl": "src",    
+    "rootDir": "src"
+  },
+  "exclude": [
+    "build",
+    "dist",
+    "node_modules",
+    "__tests__"
+  ],
+  "types": [
+    "node",
+    "webpack",
+    "react",
+    "react-dom",
+    "reactstrap"
+  ],
+  "include": [
+    "src/"
+  ],
+  "compileOnSave": false
+}
