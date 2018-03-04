@@ -1,2 +1,2 @@
 # react-ts
-React typescript A-to-z tutorial examples.
+React typescript end-to-end tutorial examples.
