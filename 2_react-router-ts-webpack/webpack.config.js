@@ -82,7 +82,7 @@ module.exports = function (env) {
         },
         output: {
             path: outDir,
-            publicPath: "/",
+            publicPath: "",
             pathinfo: true,
             filename: "[name].bundle.js",
         },
