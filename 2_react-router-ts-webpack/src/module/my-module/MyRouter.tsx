@@ -12,11 +12,16 @@ export const MyRouter = () => {
     <BrowserRouter basename={basePath}>
       <div>
         <ul style={{ listStyle: "none", padding: "0" }}>
-          <li><Link to={basePath+'/home'}>Home</Link></li>
-          <li><Link to={basePath+'/contact'}>Contact</Link></li>
-          <li><Link to={basePath+'/about'}>About</Link></li>
+          <li><Link to={'/home'}>Home</Link></li>
+          <li><Link to={'/contact'}>Contact</Link></li>
+          <li><Link to={'/about'}>About</Link></li>
         </ul>
         <hr />
+        <Route exact path={'/'} component={Home} />
+        <Route path={'/home'} component={Home} />
+        <Route path={'/contact'} component={Contact} />
+        <Route path={'/about'} component={About} />
+        {/* for referesh */}
         <Route exact path={basePath+'/'} component={Home} />
         <Route path={basePath+'/home'} component={Home} />
         <Route path={basePath+'/contact'} component={Contact} />
