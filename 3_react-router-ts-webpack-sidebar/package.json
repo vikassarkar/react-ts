@@ -1,11 +1,11 @@
 {
-  "name": "react-ts-boilerplate",
+  "name": "3_react-router-ts-webpack-sidebar",
   "version": "1.0.0",
   "description": "React, Typescript and webpack boilerplate application",
   "main": "index.js",
   "author": "vikas sarkar",
   "license": "MIT",
-  "homepage": "https://vikassarkar.github.io/react-ts/2_react-router-ts-webpack/build",
+  "homepage": "https://vikassarkar.github.io/react-ts/3_react-router-ts-webpack-sidebar/build",
   "scripts": {
     "start": "webpack-dev-server -w --config webpack.dev.config.js --env.appType=devserver",
     "build": "webpack --progress --env.appType=build",
