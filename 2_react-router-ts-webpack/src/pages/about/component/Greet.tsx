@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { ListGroup, ListGroupItem } from 'reactstrap';
-import '../../../assets/images/logo.png';
+const logo = require('../../../assets/images/logo.png');
 
 interface Props {
     techs: string[];
@@ -18,7 +18,7 @@ export default class Greet extends React.Component<Props, {}> {
             <div className="widget">
                 <div className=" row btn-primary no-gutters" style={{alignItems:'center'}}>
                     <div className="col-3">
-                        <img src={"./assets/images/logo.png"} style={{ width: "50%" }} />
+                        <img src={logo} style={{ width: "50%" }} />
                     </div>
                     <div className="col-9">
                         <h2>{this.props.headerTitle}</h2>

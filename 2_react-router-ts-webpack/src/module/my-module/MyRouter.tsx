@@ -8,7 +8,7 @@ import { BrowserRouter, Link, Route } from 'react-router-dom';
 
 export const MyRouter = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/react-ts/2_react-router-ts-webpack/bundle-eg">
       <div>
         <ul style={{ listStyle: "none", padding: "0" }}>
           <li><Link to='/home'>Home</Link></li>
