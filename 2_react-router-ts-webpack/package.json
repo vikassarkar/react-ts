@@ -5,7 +5,7 @@
   "main": "index.js",
   "author": "vikas sarkar",
   "license": "MIT",
-  "homepage": "https://vikassarkar.github.io/react-ts/2_react-router-ts-webpack/dist",
+  "homepage": "https://vikassarkar.github.io/react-ts/2_react-router-ts-webpack/build",
   "scripts": {
     "start": "webpack-dev-server -w --config webpack.dev.config.js --env.appType=devserver",
     "build": "webpack --progress --env.appType=build",
