@@ -8,6 +8,6 @@ import { ActionTypes } from "./ActionTypes"
 
 /**The other way */
 export const setInitializing = createAction<void>("SET_INITIALIZING") as () => ReduxActions.Action<void>;
-export const storeInitiate = createAction<any>(ActionTypes.STORE_INITIATE) as (data: any) => ReduxActions.Action<any>;
-export const addTodo = createAction<any>(ActionTypes.ADD_TODO) as (data: any) => ReduxActions.Action<any>;
-export const setFilter = createAction<any>(ActionTypes.SET_FILTER) as (data: any) => ReduxActions.Action<any>;
+export const storeInitiate = createAction<any>(ActionTypes.storeInitiate) as (data: any) => ReduxActions.Action<any>;
+export const addTodo = createAction<any>(ActionTypes.addTodo) as (data: any) => ReduxActions.Action<any>;
+export const setFilter = createAction<any>(ActionTypes.setFilter) as (data: any) => ReduxActions.Action<any>;

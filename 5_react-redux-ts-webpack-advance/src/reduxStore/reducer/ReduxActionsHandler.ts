@@ -1,11 +1,11 @@
 import { handleActions, Action } from "redux-actions";
-//import { ActionTypes } from "../action/ActionTypes";
+import { ActionTypes } from "../action/ActionTypes";
 
 // export const ReduxActionsHandler = () => {
 //     return {
 //         TodoReducer: handleActions({
 //             "STORE_INITIATE": (state: any, { payload: data }: Action<any>) => {
-//                 return { previousState: { ...state }, type: ActionTypes.STORE_INITIATE, payload: { storeInitiate: data } }
+//                 return { previousState: { ...state }, type: ActionTypes.storeInitiate, payload: { storeInitiate: data } }
 //             },
 
 //             "ADD_TODO": (state: any, action: any) => {
@@ -14,7 +14,7 @@ import { handleActions, Action } from "redux-actions";
 //         }, { status: 0 }),
 //         FilterReducer: handleActions<any>({
 //             "SET_FILTER": (state: any, { payload: data }: Action<any>) => {
-//                 return { previousState: { ...state }, type: ActionTypes.SET_FILTER, payload: { filterType: data } }
+//                 return { previousState: { ...state }, type: ActionTypes.setFilter, payload: { filterType: data } }
 //             }
 //         }, { status: 0 })
 //     }
@@ -22,19 +22,25 @@ import { handleActions, Action } from "redux-actions";
 
 
 /**The other way */
+import * as actions from "../action/ReduxActions";
+export function actionsToComputedPropertyName<T>(actions: T): {[key in keyof T]: string} {
+    return Object.keys(actions).reduce((symbols, key: keyof T) => ({ ...symbols, [key]: (actions[key] as any).toString() }), {} as any);
+}
+const { storeInitiate, addTodo, setFilter } = actionsToComputedPropertyName(actions);
+
 export const AdvanceReduxActionHandler = () => {
     return {
         TodoReducer: handleActions<any>({
-            ["STORE_INITIATE"]: (state, { payload: data }: Action<any>) => {
-                return { ...state, payload: { storeInitiate: data } };
+            [storeInitiate]: (state, { payload: data }: Action<any>) => {
+                return { ...state, type: ActionTypes.storeInitiate, payload: { storeInitiate: data } };
             },
-            ["ADD_TODO"]: (state, { payload: data }: Action<any>) => {
-                return { ...state, payload: { todoInput: data, completed: false } };
+            [addTodo]: (state, { payload: data }: Action<any>) => {
+                return { ...state, type: ActionTypes.addTodo, payload: { todoInput: data, completed: false } };
             }
         }, { status: 0 }),
         FilterReducer: handleActions<any>({
-            ["SET_FILTER"]: (state, { payload: data }: Action<any>) => {
-                return { ...state, payload: { filterType: data } };
+            [setFilter]: (state, { payload: data }: Action<any>) => {
+                return { ...state, type: ActionTypes.setFilter, payload: { filterType: data } };
             }
         }, { status: 1 })
     }
