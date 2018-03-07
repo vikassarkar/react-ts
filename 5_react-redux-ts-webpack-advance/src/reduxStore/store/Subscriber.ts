@@ -1,9 +1,10 @@
 
 
-const Subscriber = (Store:any) => {
+const Subscriber = (Store: any) => {
     return () => {
-        //const { application } = store.getState();
         console.log(Store.getState())
+        const { FilterReducer } = Store.getState();
+        console.log(FilterReducer)
         // switch (application.status) {
         //     case ApplicationStatus.Uninitialized:
         // }

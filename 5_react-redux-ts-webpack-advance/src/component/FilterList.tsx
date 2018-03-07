@@ -1,17 +1,22 @@
 import * as React from 'react';
 import { Button } from 'reactstrap';
-
+import { connect } from "react-redux";
+//import { connect } from "../reduxStore/store/_SecondStore";
+//import { storeInitiate } from "../reduxStore/action/_Actions";
+import { setFilter } from "../reduxStore/action/ReduxActions";
 
 interface Props {
+    setFilterAction?:Function;
 }
 
-export default class FilterList extends React.Component<Props, {}> {
+class FilterListHandler extends React.Component<Props, {}> {
     constructor(props: any) {
         super(props);
         this.showTodo = this.showTodo.bind(this);
     }
     showTodo(event: any) {
-        alert("show : "+event.target.name);
+        this.props.setFilterAction(event.target.name);
+        alert("show : " + event.target.name);
     }
     render() {
         return (
@@ -36,3 +41,18 @@ export default class FilterList extends React.Component<Props, {}> {
         );
     }
 }
+
+
+const FilterList = connect(
+    (state: any) => {
+        return { storeState: {...state} };
+    }, // Map store state to props
+    (dispatch:any) => {
+        return {
+            setFilterAction: (filterType: string) => {
+                dispatch(setFilter(filterType));
+            }
+        };// Map store actions to props
+    })(FilterListHandler);
+
+export default FilterList;

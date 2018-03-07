@@ -1,26 +1,35 @@
 import * as React from 'react';
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
+import { connect } from "react-redux";
+//import { connect } from "../reduxStore/store/_SecondStore";
+//import { storeInitiate } from "../reduxStore/action/_Actions";
+import { storeInitiate } from "../reduxStore/action/ReduxActions";
 
 interface Props {
+    storeInitiateAction: Function;
+    TodoReducer: any;
+    FilterReducer:any;
 }
 interface State {
     todoInput: string;
 }
 
-export default class AddTodo extends React.Component<Props, State> {
+class AddTodoHandler extends React.Component<Props, State> {
     constructor(props: any) {
         super(props);
-        this.state={
-            todoInput:""
+        this.state = {
+            todoInput: ""
         };
         this.addItem = this.addItem.bind(this);
         this.updateInput = this.updateInput.bind(this);
     }
-    updateInput(event:any){
-        this.setState({todoInput: event.target.value})
+    updateInput(event: any) {
+        this.setState({ todoInput: event.target.value })
     }
     addItem() {
-        alert("you need to add : "+this.state.todoInput);
+        console.log(this.props.TodoReducer);
+        this.props.storeInitiateAction(false);
+        alert("you need to add : " + this.state.todoInput);
     }
     render() {
         return (
@@ -40,3 +49,17 @@ export default class AddTodo extends React.Component<Props, State> {
         );
     }
 }
+
+const AddTodo = connect(
+    (state: any) => {
+        return { TodoReducer: state['TodoReducer'], FilterReducer: state['FilterReducer'] };
+    }, // Map store state to props
+    (dispatch:any) => {
+        return {
+            storeInitiateAction: (initiate: boolean) => {
+                dispatch(storeInitiate(initiate));
+            }
+        };// Map store actions to props
+    })(AddTodoHandler);
+
+export default AddTodo;

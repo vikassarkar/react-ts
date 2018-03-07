@@ -1,7 +1,6 @@
 const TodoReducer = (state: any, action: any) => {
     switch (action.type) {
         case 'STORE_INITIATE':
-            debugger
             return {
                 ...state,
                 type:action.type,
@@ -10,7 +9,6 @@ const TodoReducer = (state: any, action: any) => {
                 }
             }
         case 'ADD_TODO':
-            debugger
             return {
                 ...state,
                 type:action.type,
