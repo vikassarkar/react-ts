@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BrowserRouter, Link, Route } from 'react-router-dom';
+import { HashRouter  , Link, Route } from 'react-router-dom';
 
 import { Home } from '../../pages/home/Home';
 import { Contact } from '../../pages/contact/Contact';
@@ -7,7 +7,7 @@ import { About } from '../../pages/about/About';
 
 export const MyRouter = () => {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <div>
         <ul style={{ listStyle: "none", padding: "0" }}>
           <li><Link to={'/home'}>Home</Link></li>
@@ -21,6 +21,6 @@ export const MyRouter = () => {
         <Route path={'/about'} component={About} />
         {/* ways to add component in route - component, render, children */}
       </div>
-    </BrowserRouter >
+    </HashRouter   >
   )
 }
