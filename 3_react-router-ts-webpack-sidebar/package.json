@@ -24,6 +24,7 @@
   },
   "devDependencies": {
     "@types/core-js": "^0.9.46",
+    "@types/jquery": "^1.10.34",
     "@types/node": "^9.4.6",
     "@types/react": "^16.0.38",
     "@types/react-dom": "^16.0.4",
