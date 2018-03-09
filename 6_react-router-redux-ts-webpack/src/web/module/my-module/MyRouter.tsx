@@ -1,12 +1,13 @@
 import * as React from 'react';
-import { BrowserRouter, Link, Route } from 'react-router-dom';
-
+import { Link, Route } from 'react-router-dom';
+import { ConnectedRouter } from 'react-router-redux'
 //import $ from "jquery";
 
 import { Home } from '../../pages/home/Home';
 import { Contact } from '../../pages/contact/Contact';
 import { About } from '../../pages/about/About';
-import Header from "../../widgets/common/Header"
+import Header from "../../widgets/common/Header";
+import { history } from "../../reduxStore/store/Store";
 
 interface Props {
 }
@@ -29,18 +30,17 @@ export default class MyRouter extends React.Component<Props, States> {
     this.setState({ menuToggle: !this.state.menuToggle });
   }
 
-  closeMenu(){
+  closeMenu() {
     this.setState({ menuToggle: false });
   }
 
   render() {
     const title = "routing-react-ts-webpack";
+    { /* ConnectedRouter will use the store from Provider automatically */ }
     return (
-      <BrowserRouter>
+      <ConnectedRouter history={history}>
         <div className="module-container">
-
           <Header headerTitle={title} closeMenu={this.closeMenu} toggleMenu={this.toggleMenu} />
-
           <div className={this.state.menuToggle ? "sidebar-menu slideback-left" : "sidebar-menu slide-right"}>
             <div className="list-group panel">
               {/* replace -  to remove warnining error on doubleclick of same link simultneously */}
@@ -51,7 +51,6 @@ export default class MyRouter extends React.Component<Props, States> {
               </ul>
             </div>
           </div>
-
           <div className="contents-container" onClick={this.closeMenu} >
             <Route exact path={'/'} component={Home} />
             <Route path={'/home'} component={Home} />
@@ -59,9 +58,8 @@ export default class MyRouter extends React.Component<Props, States> {
             <Route path={'/about'} component={About} />
             {/* ways to add component in route - component, render, children */}
           </div>
-
         </div>
-      </BrowserRouter >
+      </ConnectedRouter >
     )
   }
 }

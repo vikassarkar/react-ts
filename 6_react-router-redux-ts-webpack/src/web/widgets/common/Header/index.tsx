@@ -1,7 +1,7 @@
 import * as React from 'react';
-import '../../../../assets/images/logo.png';
+//import '../../../../assets/images/logo.png';
 import { Button } from 'reactstrap';
-
+const image = require('../../../../assets/images/logo.png');
 interface Props {
     headerTitle?: string;
     toggleMenu?: any;
@@ -27,7 +27,7 @@ export default class Header extends React.Component<Props, {}> {
                     <div className="col-11" onClick={this.props.closeMenu}>
                         <div className="row no-gutters">
                             <div className="col-2 text-center" style={{ paddingTop: "5px", display: "flex" }}>
-                                <img src={"./assets/images/logo.png"} style={{ alignSelf: "center", width: "7rem", height: "4rem" }} />
+                                <img src={image} style={{ alignSelf: "center", width: "7rem", height: "4rem" }} />
                             </div>
                             <div className="col-10" style={{ display: "flex" }}>
                                 <div className="col-10 text-center" style={{ alignSelf: "center" }}>
