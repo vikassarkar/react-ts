@@ -5,7 +5,7 @@
   "main": "index.js",
   "author": "vikas sarkar",
   "license": "MIT",
-  "homepage": "https://vikassarkar.github.io/react-ts/3_react-router-ts-webpack-sidebar/build",
+  "homepage": "https://vikassarkar.github.io/react-ts/6_react-router-redux-ts-webpack/build",
   "scripts": {
     "start": "webpack-dev-server -w --config webpack.dev.config.js --env.appType=devserver",
     "build": "webpack --progress --env.appType=build",
