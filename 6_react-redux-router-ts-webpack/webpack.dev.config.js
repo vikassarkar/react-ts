@@ -75,7 +75,7 @@ module.exports = function (env) {
     //editRouterBaseConfig("devBuild");
     return buildConfigs = {
         entry: {
-            "my-module": ["./src/module/my-module/MyRouterLoader.tsx"],
+            "my-module": ["./src/web/module/my-module/MyRouterLoader.tsx"],
             "react": ["react", "react-dom", "react-router", "react-router-dom"],
             "vendors": ["jquery", "reactstrap"]
         },

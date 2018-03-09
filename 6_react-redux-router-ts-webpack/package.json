@@ -19,8 +19,11 @@
     "jquery": "^3.3.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
+    "react-redux": "^5.0.7",
     "react-router-dom": "^4.2.2",
-    "reactstrap": "next"
+    "react-router-redux": "^4.0.8",
+    "reactstrap": "next",
+    "redux": "^3.7.2"
   },
   "devDependencies": {
     "@types/core-js": "^0.9.46",
@@ -28,8 +31,12 @@
     "@types/node": "^9.4.6",
     "@types/react": "^16.0.38",
     "@types/react-dom": "^16.0.4",
+    "@types/react-redux": "^5.0.15",
     "@types/react-router-dom": "^4.2.4",
+    "@types/react-router-redux": "^5.0.12",
     "@types/reactstrap": "^5.0.17",
+    "@types/redux": "^3.6.0",
+    "@types/redux-actions": "^2.2.4",
     "@types/webpack": "^3.8.8",
     "@types/webpack-env": "^1.13.5",
     "awesome-typescript-loader": "^3.4.1",
@@ -44,6 +51,7 @@
     "json-loader": "^0.5.7",
     "node-sass": "^4.7.2",
     "raw-loader": "^0.5.1",
+    "redux-actions": "^2.3.0",
     "sass-loader": "^6.0.6",
     "source-map-loader": "^0.2.3",
     "style-loader": "^0.20.2",

@@ -1,5 +1,6 @@
 import * as React from 'react';
-import { HashRouter, Link, Route } from 'react-router-dom';
+import { BrowserRouter, Link, Route } from 'react-router-dom';
+
 //import $ from "jquery";
 
 import { Home } from '../../pages/home/Home';
@@ -35,10 +36,10 @@ export default class MyRouter extends React.Component<Props, States> {
   render() {
     const title = "routing-react-ts-webpack";
     return (
-      <HashRouter>
+      <BrowserRouter>
         <div className="module-container">
 
-          <Header headerTitle={title} toggleMenu={this.toggleMenu} />
+          <Header headerTitle={title} closeMenu={this.closeMenu} toggleMenu={this.toggleMenu} />
 
           <div className={this.state.menuToggle ? "sidebar-menu slideback-left" : "sidebar-menu slide-right"}>
             <div className="list-group panel">
@@ -51,7 +52,7 @@ export default class MyRouter extends React.Component<Props, States> {
             </div>
           </div>
 
-          <div className="contents-container" onClick={this.toggleMenu} >
+          <div className="contents-container" onClick={this.closeMenu} >
             <Route exact path={'/'} component={Home} />
             <Route path={'/home'} component={Home} />
             <Route path={'/contact'} component={Contact} />
@@ -60,7 +61,7 @@ export default class MyRouter extends React.Component<Props, States> {
           </div>
 
         </div>
-      </HashRouter   >
+      </BrowserRouter >
     )
   }
 }
