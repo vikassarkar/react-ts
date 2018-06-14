@@ -7,6 +7,5 @@
 *.log*
 *.map.js
 *.DS_STORE
-*/node_modules/
-*/package-lock.json
-*/tslint_reports/
+*node_modules/
+*tslint_reports/
