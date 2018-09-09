@@ -8,7 +8,7 @@ const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 
 const outDir = path.join(__dirname, "./build/");
 const testDir = path.resolve(__dirname, "./__test__");
-
+console.log(outDir)
 module.exports = () => {
     return buildConfigs = {
         entry: {

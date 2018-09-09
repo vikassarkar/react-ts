@@ -15,7 +15,7 @@
     "jquery": "^3.3.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
-    "reactstrap": "next"
+    "reactstrap": "^6.4.0"
   },
   "devDependencies": {
     "@types/core-js": "^0.9.46",
